@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
+//import thunk from 'redux-thunk';
 
 import styles from './index.css';
 
@@ -19,7 +19,7 @@ const logger = store => next => action => {
 
 
 const store = createStore(
-  applyMiddleware(logger, thunk)
+  applyMiddleware(logger)
   
 ) 
 

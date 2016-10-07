@@ -1,7 +1,7 @@
 
 var webpack = require('webpack');
 
-var CommonsPlugin = new require("webpack/lib/optimize/CommonsChunkPlugin");
+var CommonsPlugin = new require('webpack/lib/optimize/CommonsChunkPlugin');
 var devFlagPlugin = new webpack.DefinePlugin({
   __DEV__: JSON.stringify(JSON.parse(process.env.DEBUG || 'false'))
 });
@@ -14,7 +14,7 @@ var config = {
 
   context: path.resolve(__dirname + '/app'),
   entry: {
-    app    : "./index.js",
+    app    : './index.js',
     vendor : ['react', 'react-dom', 'redux', 'react-redux', 'redux-thunk']
   },
 
@@ -30,7 +30,7 @@ var config = {
           files: '**/*.css',
           failOnError: false
     })
-    ],
+  ],
 
   output: {
     filename: "[name].js",
@@ -58,24 +58,21 @@ var config = {
       }
     }, 
     {
-      test: /\.css$/, // Only .css files
+      test: /\.css$/, 
       exclude: /.*\.woff$/,
-
-      loader: 'style!css' // Run both loaders
+      loader: 'style!css' 
     },
 
-    { test: /\.(png|jpg)$/, loader: 'file-loader' },
+    { 
+      test: /\.(png|jpg)$/, loader: 'file-loader' 
+    },
     
     {
       test: /\.html$/,
-
       loader: "file?name=[name].[ext]",
     },
     ],
   },
-
-
-
 }
 
 module.exports = config;
