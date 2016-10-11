@@ -1,13 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-//import thunk from 'redux-thunk';
-
 import styles from './index.css';
-
-
 
 const logger = store => next => action => {
   console.log('dispatching', action)
@@ -15,8 +10,6 @@ const logger = store => next => action => {
   console.log('next state', store.getState())
   return result
 }
-
-
 
 const store = createStore(
   applyMiddleware(logger)
@@ -31,13 +24,9 @@ class TestApp extends React.Component{
   }
 }
 
-
-
 ReactDOM.render(
- <Provider store={store}>
-   
-   <TestApp />
-
+  <Provider store={store}>
+    <TestApp />
   </Provider>
   ,
   document.getElementById('app')
