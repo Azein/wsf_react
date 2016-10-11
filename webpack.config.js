@@ -29,7 +29,7 @@ const config = {
 
   output: {
     filename: "[name].js",
-    path: "./dist",
+    path: "./dist"
   },
 
   watch: true,
@@ -59,11 +59,7 @@ const config = {
       },
       { 
         test: /\.(png|jpg)$/, loader: 'file-loader' 
-      },    
-      {
-        test: /\.html$/,
-        loader: "file?name=[name].[ext]",
-      },
+      }
     ],
   },
 
