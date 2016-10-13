@@ -2,22 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
-import styles from './index.css';
-import App from './components/app.js';
+import styles from './index.css';  // eslint-disable-line
+import App from './components/app/app.js';
 
 const logger = store => next => action => {
-  console.log('dispatching', action)
-  let result = next(action)
-  console.log('next state', store.getState())
-  return result
-}
+  console.log('dispatching', action);
+  let result = next(action);
+  console.log('next state', store.getState());
+  return result;
+};
 
 const store = createStore(
   applyMiddleware(logger)
-  
-) 
-
-
+);
 
 ReactDOM.render(
   <Provider store={store}>
@@ -25,4 +22,4 @@ ReactDOM.render(
   </Provider>
   ,
   document.getElementById('app')
-)
+);

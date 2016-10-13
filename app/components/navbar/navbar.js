@@ -7,7 +7,7 @@ export default class Navbar extends React.Component{
       <nav className={styles.navbar__container}>
         <div className={styles.navbar__link}>Главная → </div>
         <div className={styles.navbar__link}>Каталог → </div>
-        <div className={styles.navbar__link+' '+styles.active}>Книги для дизайнеров</div>
+        <div className={styles.navbar__link_active}>Книги для дизайнеров</div>
       </nav>
     )
   }
