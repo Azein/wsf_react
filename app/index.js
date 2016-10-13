@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import styles from './index.css';
+import App from './components/app.js';
 
 const logger = store => next => action => {
   console.log('dispatching', action)
@@ -16,17 +17,11 @@ const store = createStore(
   
 ) 
 
-class TestApp extends React.Component{
-  render(){
-    return(
-      <h2  className={styles.header}>Render Test</h2>
-    )
-  }
-}
+
 
 ReactDOM.render(
   <Provider store={store}>
-    <TestApp />
+    <App />
   </Provider>
   ,
   document.getElementById('app')
