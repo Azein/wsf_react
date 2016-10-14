@@ -1,10 +1,11 @@
-
 const webpack = require('webpack');
 const CommonsPlugin = new require('webpack/lib/optimize/CommonsChunkPlugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-const path = require('path');
 const autoprefixer = require('autoprefixer');
+const assets  = require('postcss-assets');
+const nested = require('postcss-nested');
 
+const path = require('path');
 
 const config = {
   context: path.resolve(__dirname + '/app'),
@@ -28,8 +29,8 @@ const config = {
   ],
 
   output: {
-    filename: "[name].js",
-    path: "./dist"
+    filename: '[name].js',
+    path: './dist'
   },
 
   watch: true,
@@ -47,7 +48,7 @@ const config = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel",
+        loader: 'babel',
         query: {
           presets: ['react', 'es2015', 'stage-0']
         }
@@ -58,13 +59,16 @@ const config = {
         loader: 'style!css?modules&importLoaders=1&localIdentName=[name]__[local]!postcss-loader' 
       },
       { 
-        test: /\.(png|jpg)$/, loader: 'file-loader' 
+        test: /\.(png|jpg)$/,
+        loader: 'file-loader'
       }
     ],
   },
 
   postcss: () => {
     return [
+      assets,
+      nested,
       autoprefixer
     ];
   }

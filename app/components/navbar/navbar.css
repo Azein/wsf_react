@@ -1,4 +1,3 @@
-
 .navbar__container {
   width: 90%;
   height: 60px;
@@ -14,8 +13,14 @@
   padding-right: 10px;
   color: #1976d2;
   box-sizing: border-box;
+  background: inline('./assets/icon_Facebook_share.svg') right/5px no-repeat;
+
+  &:hover {
+    background-size: 15px;
+  }
 }
 
-.navbar__link.active {
+.navbar__link_active {
+  composes: navbar__link;
   color: #9e9e9e;
 }
