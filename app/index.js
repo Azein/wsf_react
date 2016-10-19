@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import styles from './index.css';  // eslint-disable-line
 import App from './components/app/app.js';
+import rootReducer from './reducers/root_reducer.js';
 
 const logger = store => next => action => {
   console.log('dispatching', action);
@@ -13,6 +14,7 @@ const logger = store => next => action => {
 };
 
 const store = createStore(
+  rootReducer,
   applyMiddleware(logger)
 );
 

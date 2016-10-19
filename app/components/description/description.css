@@ -1,0 +1,7 @@
+
+.description__container {
+  flex: 50% 1 1;
+  height: 700px;
+  background-color: #c5e1a5;
+  min-width: 300px;
+}

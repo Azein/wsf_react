@@ -14,6 +14,14 @@ body {
 .react__wrapper {
   height: 100%;
   width: 100%;
+  min-width: 320px;
   padding: 30px 30px 60px;
   box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+@media (max-width: 768px) {
+  .react__wrapper {
+    padding: 0;
+  }
 }

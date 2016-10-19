@@ -1,0 +1,6 @@
+.download__box {
+  flex: 50% 1 1;
+  height: 400px;
+  background-color: #ffecb3;
+  min-width: 300px;
+}

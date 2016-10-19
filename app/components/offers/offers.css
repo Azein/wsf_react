@@ -1,0 +1,13 @@
+
+.offers__container {
+  flex: 50% 1 1;
+  height: 700px;
+  background-color: #ffccbc;
+  min-width: 300px;
+}
+
+@media (max-width: 768px) {
+  .offers__container {
+    display: none;
+  }
+}

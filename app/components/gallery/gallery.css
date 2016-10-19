@@ -1,0 +1,7 @@
+
+.gallery__container {
+  flex: 50% 1 1;
+  height: 700px;
+  background-color: #c5cae9;
+  min-width: 300px;
+}
